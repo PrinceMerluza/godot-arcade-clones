@@ -1,0 +1,33 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://system/main.gd" type="Script" id=1]
+[ext_resource path="res://player/cannon/cannon.tscn" type="PackedScene" id=2]
+
+[node name="Main" type="Node" index="0"]
+
+script = ExtResource( 1 )
+
+[node name="Cannon" parent="." index="0" instance=ExtResource( 2 )]
+
+position = Vector2( 418, 582 )
+bullet_speed = 300.0
+
+[node name="EnemySpawner" type="Timer" parent="." index="1"]
+
+process_mode = 1
+wait_time = 2.0
+one_shot = false
+autostart = false
+
+[node name="DifficultyScaler" type="Timer" parent="." index="2"]
+
+process_mode = 1
+wait_time = 10.0
+one_shot = false
+autostart = false
+
+[connection signal="timeout" from="EnemySpawner" to="." method="_on_EnemySpawner_timeout"]
+
+[connection signal="timeout" from="DifficultyScaler" to="." method="_on_DifficultyScaler_timeout"]
+
+

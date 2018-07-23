@@ -1,0 +1,111 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://main.gd" type="Script" id=1]
+[ext_resource path="res://PlayerPaddle.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Ball.tscn" type="PackedScene" id=3]
+[ext_resource path="res://arcade_font.tres" type="DynamicFont" id=4]
+[ext_resource path="res://player1score.gd" type="Script" id=5]
+[ext_resource path="res://player2score.gd" type="Script" id=6]
+
+[node name="Main" type="Node" index="0"]
+
+script = ExtResource( 1 )
+initial_force = 400
+initial_angle_allowance = 0.785398
+
+[node name="PlayerPaddle2" parent="." index="0" instance=ExtResource( 2 )]
+
+position = Vector2( 998.416, 300.796 )
+rotation = 3.14159
+speed = 500
+up_control = "player2_up"
+down_control = "player2_down"
+
+[node name="PlayerPaddle" parent="." index="1" instance=ExtResource( 2 )]
+
+position = Vector2( 18.4161, 297.113 )
+speed = 500
+up_control = "player1_up"
+down_control = "player1_down"
+
+[node name="Ball" parent="." index="2" instance=ExtResource( 3 )]
+
+editor/display_folded = false
+
+[node name="BallSpeedTimer" type="Timer" parent="." index="3"]
+
+process_mode = 1
+wait_time = 1.5
+one_shot = false
+autostart = false
+
+[node name="Scores" type="HBoxContainer" parent="." index="4"]
+
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_left = -272.0
+margin_top = -57.0
+margin_right = 272.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 1
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+custom_constants/separation = 20
+alignment = 1
+_sections_unfolded = [ "Focus", "Grow Direction", "Hint", "Margin", "Mouse", "Rect", "Size Flags", "Theme", "custom_constants" ]
+
+[node name="Player1Score" type="Label" parent="Scores" index="0"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_right = 262.0
+margin_bottom = 57.0
+grow_horizontal = 0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 3
+size_flags_vertical = 4
+custom_fonts/font = ExtResource( 4 )
+text = "0"
+align = 2
+valign = 2
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+script = ExtResource( 5 )
+_sections_unfolded = [ "Anchor", "Grow Direction", "Margin", "Rect", "Size Flags", "custom_fonts" ]
+
+[node name="Player2Score" type="Label" parent="Scores" index="1"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 282.0
+margin_right = 544.0
+margin_bottom = 57.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 3
+size_flags_vertical = 4
+custom_fonts/font = ExtResource( 4 )
+text = "0"
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+script = ExtResource( 6 )
+_sections_unfolded = [ "Size Flags", "custom_fonts" ]
+
+[connection signal="timeout" from="BallSpeedTimer" to="." method="_on_BallSpeedTimer_timeout"]
+
+

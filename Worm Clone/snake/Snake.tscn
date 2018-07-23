@@ -1,0 +1,26 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://snake/snake.gd" type="Script" id=1]
+[ext_resource path="res://snake/components/Head.tscn" type="PackedScene" id=2]
+
+[node name="Snake" type="Node2D" index="0"]
+
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Head" parent="." index="0" instance=ExtResource( 2 )]
+
+[node name="MoverTimer" type="Timer" parent="." index="1"]
+
+process_mode = 1
+wait_time = 1.0
+one_shot = false
+autostart = false
+
+[connection signal="area_entered" from="Head" to="." method="_on_Head_area_entered"]
+
+[connection signal="timeout" from="MoverTimer" to="." method="_on_MoverTimer_timeout"]
+
+
