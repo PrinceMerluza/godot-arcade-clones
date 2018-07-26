@@ -7,10 +7,7 @@ path="res://.import/enemy_01.png-4cb77ea2ecbf7ee18e8f65f884c01e79.stex"
 [deps]
 
 source_file="res://sprites/enemy_01.png"
-source_md5="93081e1b34f5e9e0a4293f05b92e2388"
-
 dest_files=[ "res://.import/enemy_01.png-4cb77ea2ecbf7ee18e8f65f884c01e79.stex" ]
-dest_md5="fd707522d3c5ea3367ca04a4b7e5ba12"
 
 [params]
 

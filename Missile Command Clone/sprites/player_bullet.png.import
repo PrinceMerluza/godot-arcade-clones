@@ -7,10 +7,7 @@ path="res://.import/player_bullet.png-452ed57dd2ad0c5d1641ec91d0dede8c.stex"
 [deps]
 
 source_file="res://sprites/player_bullet.png"
-source_md5="45178a423cc87e999eacd7ef209425ad"
-
 dest_files=[ "res://.import/player_bullet.png-452ed57dd2ad0c5d1641ec91d0dede8c.stex" ]
-dest_md5="9eeee32a5e38daaf127b76a51d269b17"
 
 [params]
 

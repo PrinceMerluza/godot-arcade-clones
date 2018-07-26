@@ -7,10 +7,7 @@ path="res://.import/cannon.png-80c1fb3163451008b6da04638c84f9b1.stex"
 [deps]
 
 source_file="res://sprites/cannon.png"
-source_md5="d3d335d81f38c6852f2129dbffbba6d9"
-
 dest_files=[ "res://.import/cannon.png-80c1fb3163451008b6da04638c84f9b1.stex" ]
-dest_md5="102ac34dffa3ad96f81d7c422c9ff96d"
 
 [params]
 
